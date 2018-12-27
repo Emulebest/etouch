@@ -16,8 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+api_pattern = [
+    path('library/', include("library.urls")),
+    path('device/', include("device.urls")),
+    path('profile/', include("user_profile.urls"))
+]
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('rest-auth/', include("rest_auth.urls")),
-    path('rest-auth/registration/', include("rest_auth.registration.urls"))
+    path('rest-auth/registration/', include("rest_auth.registration.urls")),
+    path('api/', include(api_pattern))
 ]

@@ -44,6 +44,9 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'rest_auth.registration',
+    'device',
+    'library',
+    'user_profile'
 ]
 
 MIDDLEWARE = [
@@ -135,3 +138,5 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
